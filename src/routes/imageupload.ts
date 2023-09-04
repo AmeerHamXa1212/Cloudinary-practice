@@ -8,6 +8,15 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 // Define the route for file upload
-router.post("/upload", upload.single("video"), uploadcontroller.uploadFile);
+router.post(
+  "/uploadV",
+  upload.single("video"),
+  uploadcontroller.uploadVideoFile
+);
+router.post(
+  "/uploadI",
+  upload.single("image"),
+  uploadcontroller.uploadImageFile
+);
 
 export default router;
